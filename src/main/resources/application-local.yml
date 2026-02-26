@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    # DB 연결이 끊겨도 메모리 데이터를 유지하도록 설정 추가 (;DB_CLOSE_DELAY=-1)
+    url: jdbc:h2:mem:studydb;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    # hibernate가 쿼리를 생성하는지 로그로 확인
+    show-sql: true
+    hibernate:
+      ddl-auto: create # create-drop보다 create가 테스트 시 더 확실합니다.
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true

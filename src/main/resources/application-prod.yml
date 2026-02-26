@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    # url 끝에 &prepareThreshold=0 를 추가하세요.
+    url: jdbc:postgresql://aws-1-ap-northeast-1.pooler.supabase.com:6543/postgres?pgbouncer=true&prepareThreshold=0
+    username: postgres.hmyimthcuvjhwzmgglri
+    password: rlawotjd123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # 아래 설정을 추가하면 Prepared Statement 캐싱으로 인한 충돌을 방지하는 데 도움이 됩니다.
+        temp:
+          use_jdbc_metadata_defaults: false
+        format_sql: true
+        show_sql: true

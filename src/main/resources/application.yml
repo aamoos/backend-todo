@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: prod
+  # sql init 모드는 잠시 꺼두세요 (JPA ddl-auto가 대신 테이블을 만듭니다)
+  # sql:
+  #   init:
+  #     mode: never
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    # 테이블 생성 로그를 상세히 보기 위해 아래 한 줄 추가
+    org.hibernate.tool.schema: debug
