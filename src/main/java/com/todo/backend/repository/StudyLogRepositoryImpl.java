@@ -19,7 +19,10 @@ public class StudyLogRepositoryImpl implements StudyLogRepositoryCustom {
         return queryFactory
                 .selectFrom(studyLog)
                 .where(studyLog.studyDate.between(start, end))
-                .orderBy(studyLog.studyDate.asc())
+                .orderBy(
+                        studyLog.studyDate.asc(), // 1순위: 날짜 순서대로
+                        studyLog.id.asc()         // 2순위: 같은 날짜 안에서는 ID 순서대로 (이게 핵심!)
+                )
                 .fetch();
     }
 
