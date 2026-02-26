@@ -22,4 +22,15 @@ public class StudyLogRepositoryImpl implements StudyLogRepositoryCustom {
                 .orderBy(studyLog.studyDate.asc())
                 .fetch();
     }
+
+    public List<StudyLog> findAllByStudyDate(LocalDate date) {
+        return queryFactory
+                .selectFrom(studyLog)
+                .where(studyLog.studyDate.eq(date))
+                .orderBy(
+                        studyLog.completed.asc(), // 1순위: false(0)인 미완료 건부터
+                        studyLog.id.asc()         // 2순위: 그 안에서 등록 순서대로
+                )
+                .fetch();
+    }
 }
