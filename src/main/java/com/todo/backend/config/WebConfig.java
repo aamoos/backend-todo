@@ -10,8 +10,8 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // 모든 API 경로에 대해
-                .allowedOrigins("http://localhost:5173") // Vite 기본 포트 허용
-//                .allowedOrigins("http://localhost:5173", "https://your-frontend-domain.vercel.app")
+//                .allowedOrigins("http://localhost:5173") // Vite 기본 포트 허용
+                .allowedOrigins("http://localhost:5173", "https://frontend-todo-dusky-delta.vercel.app")
                 .allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS") // 허용할 HTTP 메서드
                 .allowedHeaders("*") // 모든 헤더 허용
                 .allowCredentials(true) // 쿠키나 인증 헤더를 허용할 경우 필요
