@@ -83,7 +83,7 @@ public class StudyController {
         return ResponseEntity.noContent().build();
     }
 
-    // --- 데이터를 주고받기 위한 DTO (Data Transfer Object) ---
+    // --- 데이터를 주고받기 위한 DTO ---
 
     @Getter
     @NoArgsConstructor

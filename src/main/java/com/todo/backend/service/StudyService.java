@@ -41,7 +41,6 @@ public class StudyService {
 
     /**
      * 완료 상태 반전 (Check/Uncheck)
-     * NoSuchElementException -> BusinessException 변경
      */
     @Transactional
     public void toggleComplete(Long id) {
@@ -53,7 +52,6 @@ public class StudyService {
 
     /**
      * 기록 내용 수정
-     * NoSuchElementException -> BusinessException 변경
      */
     @Transactional
     public void updateLogTitle(Long id, String newTitle) {
@@ -65,7 +63,6 @@ public class StudyService {
 
     /**
      * 기록 삭제
-     * NoSuchElementException -> BusinessException 변경
      */
     @Transactional
     public void deleteLog(Long id) {

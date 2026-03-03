@@ -13,7 +13,7 @@ spring:
     # hibernate가 쿼리를 생성하는지 로그로 확인
     show-sql: true
     hibernate:
-      ddl-auto: create # create-drop보다 create가 테스트 시 더 확실합니다.
+      ddl-auto: none # create-drop보다 create가 테스트 시 더 확실합니다.
     properties:
       hibernate:
         dialect: org.hibernate.dialect.H2Dialect
